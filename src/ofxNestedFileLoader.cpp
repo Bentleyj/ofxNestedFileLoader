@@ -11,6 +11,11 @@
 ofxNestedFileLoader::ofxNestedFileLoader() {
 }
 
+vector<string> ofxNestedFileLoader::load(string root) {
+    findNestedFilePaths(root);
+    return getPaths();
+}
+
 void ofxNestedFileLoader::findNestedFilePaths(string root) {
     ofDirectory dir(root);
     dir.listDir();
@@ -26,4 +31,14 @@ void ofxNestedFileLoader::findNestedFilePaths(string root) {
 
 void ofxNestedFileLoader::clearPaths() {
     paths.clear();
+}
+
+void ofxNestedFileLoader::printPaths() {
+    if(!paths.size()) {
+        cout<<"No Paths Loaded!"<<endl;
+        return;
+    }
+    for(int i = 0; i < paths.size(); i++) {
+        cout<<paths[i]<<endl;
+    }
 }

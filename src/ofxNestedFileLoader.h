@@ -19,6 +19,9 @@ public:
     vector<string> getPaths() { return paths; };
     void clearPaths();
     void printPaths();
+    
+    string getFileExtension(string filePath);
+    vector<string> getFolderStructure(string filePath);
 
 
 private:

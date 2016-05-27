@@ -42,3 +42,21 @@ void ofxNestedFileLoader::printPaths() {
         cout<<paths[i]<<endl;
     }
 }
+
+string ofxNestedFileLoader::getFileExtension(string filePath) {
+    vector<string> stringAtoms = ofSplitString(filePath, ".");
+    if(stringAtoms.size() > 0) {
+        return stringAtoms[stringAtoms.size() - 1];
+    } else {
+        ofLogError("getFileExtension: string %s has no '.' symbols", filePath);
+    }
+}
+
+vecotr<string> ofxNestedFileLoader::getFolderStructure(string filePath) {
+    vector<string> stringAtoms = ofSplitString(filePath, "/");
+    if(stringAtoms.size() > 0) {
+        return stringAtoms;
+    } else {
+        ofLogError("getFolderStructure: string %s has no '/' symbols", filePath);
+    }
+}

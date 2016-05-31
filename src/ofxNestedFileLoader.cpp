@@ -52,7 +52,7 @@ string ofxNestedFileLoader::getFileExtension(string filePath) {
     }
 }
 
-vecotr<string> ofxNestedFileLoader::getFolderStructure(string filePath) {
+vector<string> ofxNestedFileLoader::getFolderStructure(string filePath) {
     vector<string> stringAtoms = ofSplitString(filePath, "/");
     if(stringAtoms.size() > 0) {
         return stringAtoms;

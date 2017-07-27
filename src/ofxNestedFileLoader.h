@@ -14,8 +14,9 @@
 class ofxNestedFileLoader {
 public:
     ofxNestedFileLoader();
-    void findNestedFilePaths(string root);
-    vector<string> load(string root);
+	void findNestedFilePaths(string root, string extension = "");
+
+    vector<string> load(string root, string extension = "");
     vector<string> getPaths() { return paths; };
     void clearPaths();
     void printPaths();
